@@ -43,11 +43,13 @@ text(mouseX+","+mouseY,500,500)
 if (keyDown("space")){
   if (player.index === 1){
     laser1.visible=true;
+      laser2.visible=true;
     laser1.velocityX=13;
     //laserGroupP1.add(laser1)
   }
   else if(player.index===2){
     laser2.visible=true;
+      laser1.visible=true;
     laser2.velocityX=-13
   //laserGroupP2.add(laser2);
   }
@@ -56,10 +58,12 @@ console.log(player.laser1x)
 console.log(player.laser2x)
 if(laser1){
   player.laser1x=laser1.x
-player.update()}
+player.update()
+player.updateXPos()}
 if(laser2){
   player.laser2x = laser2.x
   player.update()
+    player.updateXPos()
 }
 if(allPlayers!=undefined){
 for (var plr in allPlayers){
