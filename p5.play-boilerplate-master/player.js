@@ -39,7 +39,17 @@ getCount(){
     })
   }
 
+updateXPos() {
+    Player.getPlayerInfo();
 
+    for (var plr in allPlayers) {
+      var playerIndex = "players/" + plr;
+      database.ref(playerIndex).update({
+        laser1x: this.laser1x,
+        laser2x: this.laser2x,
+      });
+    }
+  }
 
 
 }
